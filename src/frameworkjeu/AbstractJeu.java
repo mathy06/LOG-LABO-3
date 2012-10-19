@@ -1,10 +1,10 @@
 package frameworkjeu;
 
-public class Jeu {
+public abstract class AbstractJeu {
 	
 	public void initialiserJeu(){}
 	
-	public void jouerPartie(){
+	final void jouerPartie(){
 		/* contient l'ordre d'appel des autres fonctions pour jouer au jeu. */
 	}
 	
