@@ -14,25 +14,14 @@ Code(s) perm. :  CHAP07110906
 				
 Professeur : Ghizlane El boussaidi
 Chargé de labo  : Alvine Boaye Belle
-Nom du fichier : AbstractJeu.java
-Date créé : 19-10-2012
-Date dern. modif. : 19-10-2012
+Nom du fichier : Iterateur.java
+Date créé : 21-10-2012
+Date dern. modif. : 18-10-2012
 *******************************************************/
 
-public abstract class AbstractJeu {
-	
-	public void initialiserJeu(){}
-	
-	final void jouerPartie(){
-		/* contient l'ordre d'appel des autres fonctions pour jouer au jeu. */
-	}
-	
-	public void calculerScoreJoueur(){}
-	
-	public void calculerScoreDe(){}
-	
-	public void comparerScoreJoueur(){}
-	
-	public void partieTerminee(){}
-
+public interface Iterateur {
+	public boolean possedeSuivant();
+	public Object suivant();
+	public boolean possedePrecedant();
+	public Object precedant();
 }

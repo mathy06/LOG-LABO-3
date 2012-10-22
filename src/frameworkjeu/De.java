@@ -2,6 +2,25 @@ package frameworkjeu;
 
 import java.util.*;
 
+/******************************************************
+Cours : LOG121
+Session : A2012
+Groupe : 04
+Projet : Laboratoire #1
+Étudiant(e)(s) : Philippe Charbonneau
+				 Patrice Robitaille
+				 Mathieu Battah
+Code(s) perm. :  CHAP07110906
+                 ROBP2002805 
+                 BATM19038902 
+				
+Professeur : Ghizlane El boussaidi
+Chargé de labo  : Alvine Boaye Belle
+Nom du fichier : De.java
+Date créé : 19-10-2012
+Date dern. modif. : 19-10-2012
+*******************************************************/
+
 public class De implements Comparable<De> {
 	
 	private int nbFaces;
@@ -16,6 +35,14 @@ public class De implements Comparable<De> {
 	public De(int nombreFaces, Collection<Integer> facesDefinition){
 		nbFaces = nombreFaces;
 		faces = facesDefinition;
+	}
+	
+	/**
+	 * On récupère le nombre de faces sur le dé
+	 * @return
+	 */
+	public int getNbFaces(){
+		return nbFaces;
 	}
 	
 	/**
