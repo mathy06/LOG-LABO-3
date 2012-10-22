@@ -34,5 +34,5 @@ public abstract class AbstractJeu {
 	public void comparerScoreJoueur(){}
 	
 	public void partieTerminee(){}
-
+	
 }
