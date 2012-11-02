@@ -1,7 +1,7 @@
 package frameworkjeu;
 
-import frameworkjeu.Iterateur;
-import frameworkjeu.NoeudJoueur;
+import java.util.Iterator;
+
 import frameworkjeu.CollectionJoueur;
 
 /******************************************************
@@ -23,70 +23,43 @@ Date créé : 21-10-2012
 Date dern. modif. : 21-10-2012
 *******************************************************/
 
-public class IterateurJoueur implements Iterateur{
+public class IterateurJoueur implements Iterator<Joueur>{
 
 	private CollectionJoueur listeJoueurs;
-	private NoeudJoueur courant;
+	int position = 0;
 	
 	public IterateurJoueur(CollectionJoueur _listeJoueurs){
 		listeJoueurs = _listeJoueurs;
 	}
 	
-	@Override
-	public boolean possedePrecedant() {
-		boolean reponse = false;
-		if(courant == null){
-			if(!listeJoueurs.estVide())reponse = true;
+	/**
+	 * Détermine s'il y a un prochain joueur dans la liste.
+	 * @return vrai s'il y a un suivant, sinon faux
+	 */
+	public boolean hasNext() {
+		if(position >= listeJoueurs.getTaille() || listeJoueurs.getJoueur(position) == null){
+			return false;
 		}
-		else
-			reponse = courant.possedePrecedant();
-		return reponse;
-		
+		else{
+			return true;
+		}
 	}
 
-	@Override
-	public boolean possedeSuivant() {
-		boolean reponse = false;
-		if(courant == null){
-			if(!listeJoueurs.estVide())reponse = true;
-		}
-		else
-			reponse = courant.possedeSuivant();
-		
-		return reponse;
-	
+	/**
+	 * Retourne le prochain joueur et avance l'itérateur.
+	 * @return le prochain joueur de la liste
+	 */
+	public Joueur next() {
+		Joueur joueur = listeJoueurs.getJoueur(position);
+		position++;
+		return joueur;
 	}
 
-	@Override
-	public NoeudJoueur precedant() {
-		
-		if(courant == null){
-			courant = listeJoueurs.getQueue();
-		}
-		else if (courant.possedePrecedant()){
-					
-			courant = courant.getPrecedant();
-				
-		}else{
-			return null;
-		}
-		return courant;
-	}
-
-	@Override
-	public NoeudJoueur suivant() {
-		
-		if(courant == null){
-			courant = listeJoueurs.getSommet();
-		}
-		else if (courant.possedeSuivant()){
-			courant = courant.getSuivant();
-			
-		}else{
-			return null;
-		}
-		return courant;
+	/**
+	 * Non utilisé.
+	 */
+	public void remove() {
+		// TODO Auto-generated method stub
 		
 	}
-	
 }

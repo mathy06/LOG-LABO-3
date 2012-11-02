@@ -1,6 +1,6 @@
 package frameworkjeu;
 
-import frameworkjeu.NoeudJoueur;
+import java.util.ArrayList;
 
 /******************************************************
 Cours : LOG121
@@ -23,144 +23,40 @@ Date dern. modif. : 21-10-2012
 
 public class CollectionJoueur {
 	
-	private NoeudJoueur nSommet = new NoeudJoueur(null); //Premier Noeud de la liste
-	private NoeudJoueur nQueue = new NoeudJoueur(null); //Dernier noeud de la liste
-	private int maxJoueur; //Nombre de joueur maximum dans la liste
-	private int tailleListe; //Taille actuelle de la liste
+	private ArrayList<Joueur> listeJoueurs = new ArrayList<Joueur>();
 	
 	/**	 
-	 * Constructor
-	 * 
-	 * @param nbJoueurs Définit le nombre de joueurs maximum pour la liste
+	 * Constructeur
 	 */
-	public CollectionJoueur(int nbJoueurs){
-		tailleListe = 0;
-		maxJoueur = nbJoueurs;
-		nQueue = nSommet;
+	public CollectionJoueur(){}
+	
+	/**
+	 * On récupère un joueur de la liste.
+	 * @return joueur à la position spécifiée
+	 */
+	public Joueur getJoueur(int position){
+		return listeJoueurs.get(position);
 	}
 	
 	/**
-	 * On récupère le sommet de la liste
-	 * 
-	 * @return
+	 * Taille de la collection.
+	 * @return taille de la collection
 	 */
-	public NoeudJoueur getSommet() {
-		return nSommet;
-	}
-
-	/**
-	 * On définit le sommet de la liste
-	 * 
-	 * @param sommet
-	 */
-	public void setSommet(NoeudJoueur sommet) {
-		nSommet = sommet;
-	}
-
-	/**
-	 * On récupère la queue de la liste
-	 * 
-	 * @return
-	 */
-	public NoeudJoueur getQueue() {
-		return nQueue;
-	}
-
-	/**
-	 * On définit la queue de la liste
-	 * 
-	 * @param queue
-	 */
-	public void setQueue(NoeudJoueur queue) {
-		nQueue = queue;
+	public int getTaille(){
+		return listeJoueurs.size();
 	}
 	
 	/**
-	 * 
-	 * Ajouter un joueur à la partie
-	 * 
-	 * @param joueur
+	 * Ajoute un joueur à la collection.
+	 * @param joueur à ajouter
 	 */
-	
-	/**	 
-	 * Méthode servant à ajouter un noeud à la liste
-	 * 
-	 * @param forme
-	 * @throws Exception 
-	 */
-	public void ajouterNoeud(Joueur joueur) throws Exception{
-		//Si la liste n'est pas pleine
-		if(tailleListe<maxJoueur){
-			if(estVide()){
-				nSommet = nQueue = new NoeudJoueur(joueur);
-			}else{	
-				NoeudJoueur temporaire = new NoeudJoueur(joueur);
-				nQueue.setSuivant(temporaire);
-				temporaire.setPrecedant(nQueue);
-				
-				nQueue = temporaire;
-			}
-			tailleListe++;
-		}else{
-			throw new Exception("La liste de noeud est pleine. Maximum: "+maxJoueur);
-		}
+	public void ajouterJoueur(Joueur joueur){
+		listeJoueurs.add(joueur);
 	}
-	
-	/**	 
-	 * Méthode servant à déterminer si 
-	 * la liste est pleine
-	 *  
-	 */
-	public boolean estPleine(){
-
-		if(tailleListe<maxJoueur){
-			return false;
-		}else{
-			return true;
-		}
-	}
-	
-	/**	 
-	 * Méthode servant à déterminer si 
-	 * la liste est vide
-	 *  
-	 */
-	public boolean estVide(){
-
-		if(tailleListe>0){
-			return false;
-		}else{
-			return true;
-		}
-	}
-	
-	
-	/**	 
-	 * Méthode servant à obtenir la taille actuelle de
-	 * la liste
-	 *  
-	 */
-	public int obtenirTaille(){
-
-		return tailleListe;
 		
-	}
-	
-	/**	 
-	 * Méthode servant à obtenir la taille maximum de
-	 * la liste
-	 *  
-	 */
-	public int obternirTailleMaximum(){
-		
-		return maxJoueur;
-	}
-	
 	/**
-	 * 
-	 * Initialisation de l'itérateur Joueur
-	 * 
-	 * @return
+	 * Crée un itérateur de joueur.
+	 * @return itérateur de joueur
 	 */
 	public IterateurJoueur creerIterateur(){
 		IterateurJoueur iterateur = new IterateurJoueur(this);
