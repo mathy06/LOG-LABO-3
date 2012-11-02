@@ -22,11 +22,20 @@ Date dern. modif. : 19-10-2012
 public class JeuPartie {
 	
 	private Jeu jeu;
+	int tours;
+	private CollectionJoueur listeJoueurs;
+	private CollectionDe listeDes;
 	
 	final void initialiserJeu(){
-		CollectionJoueur listeJoueurs = creerListeJoueurs();
-		CollectionDe listeDes = creerListeDes();
-		jeu = creerJeu(1, listeJoueurs, listeDes);
+		tours = setNbTours();
+		listeJoueurs = creerListeJoueurs();
+		listeDes = creerListeDes();
+		
+		jeu = new Jeu(tours, listeJoueurs, listeDes);
+	}
+	
+	public int setNbTours(){
+		return 1;
 	}
 	
 	public CollectionJoueur creerListeJoueurs(){
@@ -35,10 +44,6 @@ public class JeuPartie {
 	
 	public CollectionDe creerListeDes(){
 		return new CollectionDe();
-	}
-	
-	public Jeu creerJeu(int tours, CollectionJoueur joueurs, CollectionDe des){
-		return new Jeu(tours, joueurs, des);
 	}
 	
 	public void jouerPartie(){
