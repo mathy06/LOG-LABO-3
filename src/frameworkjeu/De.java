@@ -42,11 +42,10 @@ public class De implements Comparable<De> {
 	}
 	
 	/**
-	 * Modifie la valeur du score du dé.
-	 * @param nouveauScore Score du dé
+	 * Effectue le lancement du de
 	 */
-	public void setScore(int nouvelleValeur){
-		valeur = nouvelleValeur;
+	public void lancerDe(){
+		valeur = (int) (Math.random() * ( nbFaces - 1 ));
 	}
 	
 	/**

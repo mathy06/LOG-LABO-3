@@ -47,6 +47,14 @@ public class CollectionDe {
 	}
 	
 	/**
+	 * Ajoute un dé à la collection
+	 * @param de
+	 */
+	public void ajouterDe(De de){
+		listeDe.add(de);
+	}
+	
+	/**
 	 * Crée un itérateur de dé.
 	 * @return itérateur de dé
 	 */
