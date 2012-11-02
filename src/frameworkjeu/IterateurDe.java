@@ -1,7 +1,7 @@
 package frameworkjeu;
 
-import frameworkjeu.Iterateur;
-import frameworkjeu.NoeudDe;
+import java.util.Iterator;
+
 import frameworkjeu.CollectionDe;
 
 /******************************************************
@@ -23,70 +23,47 @@ Date créé : 21-10-2012
 Date dern. modif. : 21-10-2012
 *******************************************************/
 
-public class IterateurDe implements Iterateur{
+public class IterateurDe implements Iterator<De>{
 
 	private CollectionDe listeDe;
-	private NoeudDe courant;
+	int position = 0;
 	
+	/**
+	 * Constructeur
+	 * @param _listeDe collection de dé
+	 */
 	public IterateurDe(CollectionDe _listeDe){
-		listeDe = _listeDe;
+		this.listeDe = _listeDe;
 	}
 	
-	@Override
-	public boolean possedePrecedant() {
-		boolean reponse = false;
-		if(courant == null){
-			if(!listeDe.estVide())reponse = true;
+	/**
+	 * Détermine s'il y a un prochain dé dans la liste.
+	 * @return vrai s'il y a un suivant, sinon faux
+	 */
+	public boolean hasNext() {
+		if(position >= listeDe.getTaille() || listeDe.getDe(position) == null){
+			return false;
 		}
-		else
-			reponse = courant.possedePrecedant();
-		return reponse;
-		
+		else{
+			return true;
+		}
 	}
 
-	@Override
-	public boolean possedeSuivant() {
-		boolean reponse = false;
-		if(courant == null){
-			if(!listeDe.estVide())reponse = true;
-		}
-		else
-			reponse = courant.possedeSuivant();
-		
-		return reponse;
-	
+	/**
+	 * Retourne le prochain dé.
+	 * @return le prochain dé de la liste
+	 */
+	public De next() {
+		De de = listeDe.getDe(position);
+		position++;
+		return de;
 	}
 
-	@Override
-	public NoeudDe precedant() {
-		
-		if(courant == null){
-			courant = listeDe.getQueue();
-		}
-		else if (courant.possedePrecedant()){
-					
-			courant = courant.getPrecedant();
-				
-		}else{
-			return null;
-		}
-		return courant;
-	}
-
-	@Override
-	public NoeudDe suivant() {
-		
-		if(courant == null){
-			courant = listeDe.getSommet();
-		}
-		else if (courant.possedeSuivant()){
-			courant = courant.getSuivant();
-			
-		}else{
-			return null;
-		}
-		return courant;
+	/**
+	 * Non utilisé.
+	 */
+	public void remove() {
+		// TODO Auto-generated method stub
 		
 	}
-	
 }

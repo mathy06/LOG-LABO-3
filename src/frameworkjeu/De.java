@@ -1,7 +1,5 @@
 package frameworkjeu;
 
-import java.util.*;
-
 /******************************************************
 Cours : LOG121
 Session : A2012
@@ -24,17 +22,15 @@ Date dern. modif. : 19-10-2012
 public class De implements Comparable<De> {
 	
 	private int nbFaces;
-	private int score;
-	private Collection<Integer> faces;
+	private int valeur;
 	
 	/**
 	 * Constructeur du dé.
 	 * @param nombreFaces		Nombre de faces du dé
 	 * @param facesDefinition	Collection contenant la valeur de chaque face du dé
 	 */
-	public De(int nombreFaces, Collection<Integer> facesDefinition){
+	public De(int nombreFaces){
 		nbFaces = nombreFaces;
-		faces = facesDefinition;
 	}
 	
 	/**
@@ -49,8 +45,8 @@ public class De implements Comparable<De> {
 	 * Modifie la valeur du score du dé.
 	 * @param nouveauScore Score du dé
 	 */
-	public void setScore(int nouveauScore){
-		score = nouveauScore;
+	public void setScore(int nouvelleValeur){
+		valeur = nouvelleValeur;
 	}
 	
 	/**
@@ -62,10 +58,10 @@ public class De implements Comparable<De> {
 	public int compareTo(De de) {
 		int resultat;
 		
-		if(this.score > de.score){
+		if(this.valeur > de.valeur){
 			resultat = 1;
 		}
-		else if(this.score < de.score){
+		else if(this.valeur < de.valeur){
 			resultat = -1;
 		}
 		else{
