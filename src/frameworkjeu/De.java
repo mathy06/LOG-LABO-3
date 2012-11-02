@@ -34,18 +34,27 @@ public class De implements Comparable<De> {
 	}
 	
 	/**
-	 * On récupère le nombre de faces sur le dé
-	 * @return
+	 * Retourne le nombre de faces sur le dé.
+	 * @return nombre de faces
 	 */
 	public int getNbFaces(){
 		return nbFaces;
 	}
 	
 	/**
-	 * Effectue le lancement du de
+	 * Retourne la valeur du dé.
+	 * @return valeur du dé
 	 */
-	public void lancerDe(){
-		valeur = (int) (Math.random() * ( nbFaces - 1 ));
+	public int getValeur(){
+		return valeur;
+	}
+	
+	/**
+	 * Modifie la valeur actuelle du dé.
+	 * @param nouvelle valeur du dé
+	 */
+	public void setValeur(int nouvelleValeur){
+		valeur = nouvelleValeur;
 	}
 	
 	/**

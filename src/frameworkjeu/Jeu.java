@@ -14,25 +14,21 @@ Code(s) perm. :  CHAP07110906
 				
 Professeur : Ghizlane El boussaidi
 Chargé de labo  : Alvine Boaye Belle
-Nom du fichier : AbstractJeu.java
-Date créé : 19-10-2012
-Date dern. modif. : 19-10-2012
+Nom du fichier : Jeu.java
+Date créé : 02-11-2012
+Date dern. modif. : 02-11-2012
 *******************************************************/
 
-public abstract class AbstractJeu {
+public class Jeu {
 	
-	public void initialiserJeu(){}
+	private int nbTours;
+	private CollectionJoueur listeJoueurs;
+	private CollectionDe listeDes;
 	
-	final void jouerPartie(){
-		/* contient l'ordre d'appel des autres fonctions pour jouer au jeu. */
+	public Jeu(int tours, CollectionJoueur joueurs, CollectionDe des){
+		nbTours = tours;
+		listeJoueurs = joueurs;
+		listeDes = des;
 	}
-	
-	public void calculerScoreJoueur(){}
-	
-	public void calculerScoreDe(){}
-	
-	public void comparerScoreJoueur(){}
-	
-	public void partieTerminee(){}
-	
+
 }
