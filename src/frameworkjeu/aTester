@@ -1,0 +1,19 @@
+calculerScoreTour()
+calculerLeVainqueur() de la classe Jeu 
+calculerScoreTour()
+calculerLeVainqueur() de stratégie concrète
+
+Tester dans le cas d'un joueur qui obtient trois chiffres identiques et égaux au numéro du 
+tour si le score calculé est 21 points et si le joueur passe la main au joueur suivant.
+
+Tester dans le cas d'obtention de 3 chiffres identiques mais différents du numéro de tour 
+si le score est de 5 points et le joueur garde la main.
+
+Tester dans le cas d'obtention d'un seul chiffre correspondant au numéro de tour si le score
+est correct et si le joueur garde la main.
+
+Tester dans le cas d'obtention de 0 point si le joueur passe la main au joueur suivant.
+
+Tester le classement final des joueurs avec différents scores; ceci teste la méthode 
+calculerLeVainqueur(). Cette méthode doit retourner les joueurs triés selon un ordre 
+décroissant de scores.
