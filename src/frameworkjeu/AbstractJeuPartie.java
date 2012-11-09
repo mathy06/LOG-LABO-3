@@ -25,13 +25,15 @@ public abstract class AbstractJeuPartie {
 	int tours;
 	private CollectionJoueur listeJoueurs;
 	private CollectionDe listeDes;
+	private IStrategie strategie;
 	
 	final void initialiserJeu(){
 		tours = setNbTours();
 		listeJoueurs = creerListeJoueurs();
 		listeDes = creerListeDes();
+		strategie = creerStrategie();
 		
-		jeu = new Jeu(tours, listeJoueurs, listeDes);
+		jeu = new Jeu(tours, listeJoueurs, listeDes, strategie);
 	}
 	
 	abstract int setNbTours();
@@ -40,12 +42,24 @@ public abstract class AbstractJeuPartie {
 	
 	abstract CollectionDe creerListeDes();
 	
+	abstract IStrategie creerStrategie();
+	
 	final void jouerPartie(){
 		for(int i=1; i<=tours; i++){
 			jeu.calculerScoreTour();
 		}
 		
 		jeu.calculerLeVainqueur();
+		
+				//loop sur le nombre de tours
+					//appeler calculer score tour
+						//dans calculer score tour
+						// loop sur collection de joueurs
+							// loop sur collection de de pour setter valeur de chaque de
+							// calculer score avec valeur des de, tour en cour et comparaison entre les de
+							// ajouter le score au joueur en cours
+							// determiner si on change de joueur ou si le joueur courant peut rejouer
+
 	}
 	
 }

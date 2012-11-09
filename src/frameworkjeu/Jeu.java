@@ -24,6 +24,7 @@ public class Jeu {
 	private int nbTours;
 	private CollectionJoueur listeJoueurs;
 	private CollectionDe listeDes;
+	private IStrategie strategie;
 	
 	/**
 	 * Constructeur de jeu de dé.
@@ -31,21 +32,26 @@ public class Jeu {
 	 * @param joueurs Collection des joueurs
 	 * @param des Collection des dés
 	 */
-	public Jeu(int tours, CollectionJoueur joueurs, CollectionDe des){
+	public Jeu(int tours, CollectionJoueur joueurs, CollectionDe des, IStrategie jeuStrategie){
 		nbTours = tours;
 		listeJoueurs = joueurs;
 		listeDes = des;
+		strategie = jeuStrategie;
 	}
 	
 	/**
 	 * Calcule le score d'un tour.
 	 */
-	public void calculerScoreTour(){}
+	public void calculerScoreTour(){
+		strategie.calculerScoreTour(this);
+	}
 	
 	/**
 	 * Retourne le joueur ayant gagné le jeu.
 	 * @return Joueur gagant
 	 */
-	public Joueur calculerLeVainqueur(){return new Joueur("Test");}
+	public void calculerLeVainqueur(){
+		strategie.calculerLeVainqueur(this);
+	}
 
 }
