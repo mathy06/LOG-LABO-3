@@ -19,20 +19,20 @@ public class JoueurTest {
 	}
 	
 	@Test
-	public void joueurAjouterScoreTest(){
+	public void JoueurAjouterScoreTest(){
 		joueur1.ajouterScore(10);
 		assertTrue(joueur1.getScore()==10);
 	}
 	
 	@Test
-	public void joueurSuperieurTest(){
+	public void JoueurSuperieurTest(){
 		joueur1.ajouterScore(3);
 		joueur2.ajouterScore(2);
 		assertTrue(joueur1.compareTo(joueur2)==1);
 	}
 
 	@Test
-	public void joueurInferieurTest(){
+	public void JoueurInferieurTest(){
 		joueur1.ajouterScore(1);
 		joueur2.ajouterScore(2);
 		assertTrue(joueur1.compareTo(joueur2)==-1);
@@ -40,14 +40,14 @@ public class JoueurTest {
 	
 
 	@Test
-	public void joueurMemeScoreTest(){
+	public void JoueurMemeScoreTest(){
 		joueur1.ajouterScore(2);
 		joueur2.ajouterScore(2);
 		assertTrue(joueur1.compareTo(joueur2)==0);
 	}
 
 	@Test(expected=IllegalArgumentException.class)
-	public void joueurNullTest(){
+	public void deNullTest(){
 		joueur1.ajouterScore(4);
 		joueur1.compareTo(null);
 	}

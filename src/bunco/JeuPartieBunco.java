@@ -1,5 +1,8 @@
 package bunco;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 import frameworkjeu.CollectionDe;
 import frameworkjeu.CollectionJoueur;
 import frameworkjeu.ConcreteStrategie;
@@ -30,9 +33,12 @@ public class JeuPartieBunco extends frameworkjeu.AbstractJeuPartie {
 	public CollectionDe creerListeDes(){
 		listeDes = new CollectionDe();
 		
-		listeDes.ajouterDe(Fabrique.creerDe(6));
-		listeDes.ajouterDe(Fabrique.creerDe(6));
-		listeDes.ajouterDe(Fabrique.creerDe(6));
+		ArrayList<Object> listeFaces = new ArrayList<Object>();
+		Collections.addAll(listeFaces, 1,2,3,4,5,6);
+		
+		listeDes.ajouterDe(Fabrique.creerDe(listeFaces));
+		listeDes.ajouterDe(Fabrique.creerDe(listeFaces));
+		listeDes.ajouterDe(Fabrique.creerDe(listeFaces));
 		
 		return listeDes;
 	}

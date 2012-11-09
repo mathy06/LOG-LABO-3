@@ -64,4 +64,8 @@ public class Jeu {
 	public CollectionDe getDes(){
 		return listeDes;
 	}
+	
+	public int getTourCourant(){
+		return tourCourant;
+	}
 }

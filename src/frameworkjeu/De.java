@@ -35,12 +35,24 @@ public class De implements Comparable<De> {
 		faces = listeFaces;
 	}
 	
+	public ArrayList<Object> getListeFaces(){
+		return faces;
+	}
+	
 	/**
 	 * Modifie la valeur actuelle du dé.
 	 * @param nouvelle valeur du dé
 	 */
 	public void setValeur(Object nouvelleValeur){
 		valeur = nouvelleValeur;
+	}
+	
+	/**
+	 * On récupère la valeur du dé
+	 * @return
+	 */
+	public Object getValeur(){
+		return valeur;
 	}
 	
 	/**
