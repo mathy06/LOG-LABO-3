@@ -4,7 +4,7 @@ package frameworkjeu;
 Cours : LOG121
 Session : A2012
 Groupe : 04
-Projet : Laboratoire #1
+Projet : Laboratoire #2
 Étudiant(e)(s) : Philippe Charbonneau
 				 Patrice Robitaille
 				 Mathieu Battah
@@ -16,7 +16,7 @@ Professeur : Ghizlane El boussaidi
 Chargé de labo  : Alvine Boaye Belle
 Nom du fichier : Jeu.java
 Date créé : 02-11-2012
-Date dern. modif. : 02-11-2012
+Date dern. modif. : 09-11-2012
 *******************************************************/
 
 public class Jeu {
@@ -25,10 +25,27 @@ public class Jeu {
 	private CollectionJoueur listeJoueurs;
 	private CollectionDe listeDes;
 	
+	/**
+	 * Constructeur de jeu de dé.
+	 * @param tours Nombre de tours
+	 * @param joueurs Collection des joueurs
+	 * @param des Collection des dés
+	 */
 	public Jeu(int tours, CollectionJoueur joueurs, CollectionDe des){
 		nbTours = tours;
 		listeJoueurs = joueurs;
 		listeDes = des;
 	}
+	
+	/**
+	 * Calcule le score d'un tour.
+	 */
+	public void calculerScoreTour(){}
+	
+	/**
+	 * Retourne le joueur ayant gagné le jeu.
+	 * @return Joueur gagant
+	 */
+	public Joueur calculerLeVainqueur(){return new Joueur("Test");}
 
 }

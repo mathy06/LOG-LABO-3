@@ -16,10 +16,10 @@ Professeur : Ghizlane El boussaidi
 Chargé de labo  : Alvine Boaye Belle
 Nom du fichier : JeuPartie.java
 Date créé : 19-10-2012
-Date dern. modif. : 19-10-2012
+Date dern. modif. : 09-11-2012
 *******************************************************/
 
-public class JeuPartie {
+public abstract class AbstractJeuPartie {
 	
 	private Jeu jeu;
 	int tours;
@@ -34,27 +34,18 @@ public class JeuPartie {
 		jeu = new Jeu(tours, listeJoueurs, listeDes);
 	}
 	
-	public int setNbTours(){
-		return 1;
-	}
+	abstract int setNbTours();
 	
-	public CollectionJoueur creerListeJoueurs(){
-		return new CollectionJoueur();
-	}
+	abstract CollectionJoueur creerListeJoueurs();
 	
-	public CollectionDe creerListeDes(){
-		return new CollectionDe();
-	}
+	abstract CollectionDe creerListeDes();
 	
-	public void jouerPartie(){
-		//loop sur le nombre de tours
-			//appeler calculer score tour
-				//dans calculer score tour
-				// loop sur collection de joueurs
-					// loop sur collection de de pour setter valeur de chaque de
-					// calculer score avec valeur des de, tour en cour et comparaison entre les de
-					// ajouter le score au joueur en cours
-					// determiner si on change de joueur ou si le joueur courant peut rejouer
+	final void jouerPartie(){
+		for(int i=1; i<=tours; i++){
+			jeu.calculerScoreTour();
+		}
+		
+		jeu.calculerLeVainqueur();
 	}
 	
 }
