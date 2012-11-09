@@ -50,16 +50,6 @@ public abstract class AbstractJeuPartie {
 		}
 		
 		jeu.calculerLeVainqueur();
-		
-				//loop sur le nombre de tours
-					//appeler calculer score tour
-						//dans calculer score tour
-						// loop sur collection de joueurs
-							// loop sur collection de de pour setter valeur de chaque de
-							// calculer score avec valeur des de, tour en cour et comparaison entre les de
-							// ajouter le score au joueur en cours
-							// determiner si on change de joueur ou si le joueur courant peut rejouer
-
 	}
 	
 }
