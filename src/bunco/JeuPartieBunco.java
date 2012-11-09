@@ -12,7 +12,6 @@ public class JeuPartieBunco extends frameworkjeu.AbstractJeuPartie {
 	private CollectionJoueur listeJoueurs;
 	private CollectionDe listeDes;
 	private ConcreteStrategie strategie;
-	private Fabrique fabrique;
 	
 	public int setNbTours(){
 		return 3;
@@ -21,9 +20,9 @@ public class JeuPartieBunco extends frameworkjeu.AbstractJeuPartie {
 	public CollectionJoueur creerListeJoueurs(){
 		listeJoueurs = new CollectionJoueur();
 		
-		listeJoueurs.ajouterJoueur(fabrique.creerJoueur("Patrice"));
-		listeJoueurs.ajouterJoueur(fabrique.creerJoueur("Mathieu"));
-		listeJoueurs.ajouterJoueur(fabrique.creerJoueur("Philippe"));
+		listeJoueurs.ajouterJoueur(Fabrique.creerJoueur("Patrice"));
+		listeJoueurs.ajouterJoueur(Fabrique.creerJoueur("Mathieu"));
+		listeJoueurs.ajouterJoueur(Fabrique.creerJoueur("Philippe"));
 				
 		return listeJoueurs;
 	}
@@ -31,9 +30,9 @@ public class JeuPartieBunco extends frameworkjeu.AbstractJeuPartie {
 	public CollectionDe creerListeDes(){
 		listeDes = new CollectionDe();
 		
-		listeDes.ajouterDe(fabrique.creerDe(6));
-		listeDes.ajouterDe(fabrique.creerDe(6));
-		listeDes.ajouterDe(fabrique.creerDe(6));
+		listeDes.ajouterDe(Fabrique.creerDe(6));
+		listeDes.ajouterDe(Fabrique.creerDe(6));
+		listeDes.ajouterDe(Fabrique.creerDe(6));
 		
 		return listeDes;
 	}

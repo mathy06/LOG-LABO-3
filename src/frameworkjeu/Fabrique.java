@@ -1,18 +1,13 @@
 package frameworkjeu;
 
-public class Fabrique {
+public final class Fabrique {
 	
-	private De de;
-	private Joueur joueur;
-	
-	public De creerDe(int nbFaces){
-		de = new De(nbFaces);
-		return de;
+	public static De creerDe(int nbFaces){
+		return new De(nbFaces);
 	}
 	
-	public Joueur creerJoueur(String nom){
-		joueur = new Joueur(nom);
-		return joueur;
+	public static Joueur creerJoueur(String nom){
+		return new Joueur(nom);
 	}
 	
 }

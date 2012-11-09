@@ -27,9 +27,11 @@ public class ConcreteStrategie implements IStrategie{
 				
 				//On définit la valeur du dé de façon random
 				int random = (int)(Math.random() * (nbFaces-lower)) + lower;
-				
 				de.setValeur(random);
 			}
+			
+			
+			
 		}
 		
 		

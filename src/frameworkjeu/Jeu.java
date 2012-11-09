@@ -21,7 +21,8 @@ Date dern. modif. : 09-11-2012
 
 public class Jeu {
 	
-	private int nbTours;
+	private int nbTours; //Définit le nombre de tours total au jeu
+	private int tourCourant; //Définit le tour actuel dans le jeu
 	private CollectionJoueur listeJoueurs;
 	private CollectionDe listeDes;
 	private IStrategie strategie;
@@ -34,6 +35,7 @@ public class Jeu {
 	 */
 	public Jeu(int tours, CollectionJoueur joueurs, CollectionDe des, IStrategie jeuStrategie){
 		nbTours = tours;
+		tourCourant = 1;
 		listeJoueurs = joueurs;
 		listeDes = des;
 		strategie = jeuStrategie;
