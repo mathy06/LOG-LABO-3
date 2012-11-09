@@ -54,4 +54,12 @@ public class Jeu {
 		strategie.calculerLeVainqueur(this);
 	}
 
+	
+	public CollectionJoueur getJoueurs(){
+		return listeJoueurs;
+	}
+	
+	public CollectionDe getDes(){
+		return listeDes;
+	}
 }

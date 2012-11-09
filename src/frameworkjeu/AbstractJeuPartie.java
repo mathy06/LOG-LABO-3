@@ -36,13 +36,13 @@ public abstract class AbstractJeuPartie {
 		jeu = new Jeu(tours, listeJoueurs, listeDes, strategie);
 	}
 	
-	abstract int setNbTours();
+	public abstract int setNbTours();
 	
-	abstract CollectionJoueur creerListeJoueurs();
+	public abstract CollectionJoueur creerListeJoueurs();
 	
-	abstract CollectionDe creerListeDes();
+	public abstract CollectionDe creerListeDes();
 	
-	abstract IStrategie creerStrategie();
+	public abstract IStrategie creerStrategie();
 	
 	final void jouerPartie(){
 		for(int i=1; i<=tours; i++){
