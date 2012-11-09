@@ -1,5 +1,7 @@
 package frameworkjeu;
 
+import java.util.ArrayList;
+
 /******************************************************
 Cours : LOG121
 Session : A2012
@@ -21,39 +23,23 @@ Date dern. modif. : 19-10-2012
 
 public class De implements Comparable<De> {
 	
-	private int nbFaces;
-	private int valeur;
+	private ArrayList<Object> faces = new ArrayList<Object>();
+	private Object valeur;
 	
 	/**
 	 * Constructeur du dé.
 	 * @param nombreFaces		Nombre de faces du dé
 	 * @param facesDefinition	Collection contenant la valeur de chaque face du dé
 	 */
-	public De(int nombreFaces){
-		nbFaces = nombreFaces;
-	}
-	
-	/**
-	 * Retourne le nombre de faces sur le dé.
-	 * @return nombre de faces
-	 */
-	public int getNbFaces(){
-		return nbFaces;
-	}
-	
-	/**
-	 * Retourne la valeur du dé.
-	 * @return valeur du dé
-	 */
-	public int getValeur(){
-		return valeur;
+	public De(ArrayList<Object> listeFaces){
+		faces = listeFaces;
 	}
 	
 	/**
 	 * Modifie la valeur actuelle du dé.
 	 * @param nouvelle valeur du dé
 	 */
-	public void setValeur(int nouvelleValeur){
+	public void setValeur(Object nouvelleValeur){
 		valeur = nouvelleValeur;
 	}
 	
@@ -64,12 +50,15 @@ public class De implements Comparable<De> {
 	 * 			-1 Si le score du dé appelant est plus petit.
 	 */
 	public int compareTo(De de) {
+		if(de == null)
+			throw new IllegalArgumentException("Le paramètre De ne peut pas être null.");
+		
 		int resultat;
 		
-		if(this.valeur > de.valeur){
+		if(this.faces.indexOf(valeur) > de.faces.indexOf(de.valeur)){
 			resultat = 1;
 		}
-		else if(this.valeur < de.valeur){
+		else if(this.faces.indexOf(valeur) < de.faces.indexOf(de.valeur)){
 			resultat = -1;
 		}
 		else{

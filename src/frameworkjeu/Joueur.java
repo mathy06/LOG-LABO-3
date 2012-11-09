@@ -64,6 +64,9 @@ public class Joueur implements Comparable<Joueur> {
 	 * 			-1 Si le score du joueur appelant est plus petit.
 	 */
 	public int compareTo(Joueur joueur) {
+		if(joueur == null)
+			throw new IllegalArgumentException("Le paramètre De ne peut pas être null.");
+		
 		int resultat;
 		if(this.score > joueur.score){
 			resultat = 1;
