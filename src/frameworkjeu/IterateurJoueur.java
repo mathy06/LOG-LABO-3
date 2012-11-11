@@ -8,7 +8,7 @@ import frameworkjeu.CollectionJoueur;
 Cours : LOG121
 Session : A2012
 Groupe : 04
-Projet : Laboratoire #1
+Projet : Laboratoire #2
 Étudiant(e)(s) : Philippe Charbonneau
 				 Patrice Robitaille
 				 Mathieu Battah
@@ -20,7 +20,7 @@ Professeur : Ghizlane El boussaidi
 Chargé de labo  : Alvine Boaye Belle
 Nom du fichier : IterateurJoueur.java
 Date créé : 21-10-2012
-Date dern. modif. : 21-10-2012
+Date dern. modif. : 11-11-2012
 *******************************************************/
 
 public class IterateurJoueur implements Iterator<Joueur>{

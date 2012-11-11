@@ -41,6 +41,26 @@ public class Jeu {
 		strategie = jeuStrategie;
 	}
 	
+	public void setTourCourant(int tour){
+		tourCourant = tour;
+	}
+	
+	public CollectionJoueur getJoueurs(){
+		return listeJoueurs;
+	}
+	
+	public CollectionDe getDes(){
+		return listeDes;
+	}
+	
+	public int getTourCourant(){
+		return tourCourant;
+	}
+	
+	public int getNbTours(){
+		return nbTours;
+	}
+	
 	/**
 	 * Calcule le score d'un tour.
 	 */
@@ -54,18 +74,5 @@ public class Jeu {
 	 */
 	public void calculerLeVainqueur(){
 		strategie.calculerLeVainqueur(this);
-	}
-
-	
-	public CollectionJoueur getJoueurs(){
-		return listeJoueurs;
-	}
-	
-	public CollectionDe getDes(){
-		return listeDes;
-	}
-	
-	public int getTourCourant(){
-		return tourCourant;
 	}
 }

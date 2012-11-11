@@ -6,7 +6,7 @@ import java.util.ArrayList;
 Cours : LOG121
 Session : A2012
 Groupe : 04
-Projet : Laboratoire #1
+Projet : Laboratoire #2
 Étudiant(e)(s) : Philippe Charbonneau
 				 Patrice Robitaille
 				 Mathieu Battah
@@ -18,7 +18,7 @@ Professeur : Ghizlane El boussaidi
 Chargé de labo  : Alvine Boaye Belle
 Nom du fichier : De.java
 Date créé : 19-10-2012
-Date dern. modif. : 19-10-2012
+Date dern. modif. : 11-11-2012
 *******************************************************/
 
 public class De implements Comparable<De> {
@@ -61,16 +61,16 @@ public class De implements Comparable<De> {
 	 * 			0 Si le score des 2 dés sont égaux.
 	 * 			-1 Si le score du dé appelant est plus petit.
 	 */
-	public int compareTo(De de) {
-		if(de == null)
+	public int compareTo(De deAComparer) {
+		if(deAComparer == null)
 			throw new IllegalArgumentException("Le paramètre De ne peut pas être null.");
 		
 		int resultat;
 		
-		if(this.faces.indexOf(valeur) > de.faces.indexOf(de.valeur)){
+		if(this.faces.indexOf(valeur) > deAComparer.faces.indexOf(deAComparer.valeur)){
 			resultat = 1;
 		}
-		else if(this.faces.indexOf(valeur) < de.faces.indexOf(de.valeur)){
+		else if(this.faces.indexOf(valeur) < deAComparer.faces.indexOf(deAComparer.valeur)){
 			resultat = -1;
 		}
 		else{

@@ -8,7 +8,7 @@ import frameworkjeu.CollectionDe;
 Cours : LOG121
 Session : A2012
 Groupe : 04
-Projet : Laboratoire #1
+Projet : Laboratoire #2
 Étudiant(e)(s) : Philippe Charbonneau
 				 Patrice Robitaille
 				 Mathieu Battah
@@ -20,7 +20,7 @@ Professeur : Ghizlane El boussaidi
 Chargé de labo  : Alvine Boaye Belle
 Nom du fichier : IterateurDe.java
 Date créé : 21-10-2012
-Date dern. modif. : 21-10-2012
+Date dern. modif. : 11-11-2012
 *******************************************************/
 
 public class IterateurDe implements Iterator<De>{
@@ -30,7 +30,7 @@ public class IterateurDe implements Iterator<De>{
 	
 	/**
 	 * Constructeur
-	 * @param _listeDe collection de dé
+	 * @param _listeDe collection de dés
 	 */
 	public IterateurDe(CollectionDe _listeDe){
 		this.listeDe = _listeDe;
@@ -54,9 +54,9 @@ public class IterateurDe implements Iterator<De>{
 	 * @return le prochain dé de la liste
 	 */
 	public De next() {
-		De de = listeDe.getDe(position);
+		De prochainDe = listeDe.getDe(position);
 		position++;
-		return de;
+		return prochainDe;
 	}
 
 	/**

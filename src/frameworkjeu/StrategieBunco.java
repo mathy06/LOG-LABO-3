@@ -1,9 +1,27 @@
 package frameworkjeu;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 
-public class ConcreteStrategie implements IStrategie{
+/******************************************************
+Cours : LOG121
+Session : A2012
+Groupe : 04
+Projet : Laboratoire #2
+Étudiant(e)(s) : Philippe Charbonneau
+				 Patrice Robitaille
+				 Mathieu Battah
+Code(s) perm. :  CHAP07110906
+                 ROBP2002805 
+                 BATM19038902 
+				
+Professeur : Ghizlane El boussaidi
+Chargé de labo  : Alvine Boaye Belle
+Nom du fichier : StrategieBunco.java
+Date créé : 09-11-2012
+Date dern. modif. : 09-11-2012
+*******************************************************/
+
+public class StrategieBunco implements IStrategie{
 
 	private CollectionJoueur listeJoueurs;
 	private CollectionDe listeDes;
@@ -19,6 +37,7 @@ public class ConcreteStrategie implements IStrategie{
 
 		tourCourant = jeu.getTourCourant();
 		listeJoueurs = jeu.getJoueurs();
+		listeDes = jeu.getDes();
 		
 		//On joue le tour pour chaque joueur
 		for (Iterator<Joueur> i = listeJoueurs.creerIterateur(); i.hasNext(); ){
@@ -31,13 +50,11 @@ public class ConcreteStrategie implements IStrategie{
 				
 				//On set une valeur à tous les dés
 				for (Iterator<De> i2 = listeDes.creerIterateur(); i2.hasNext(); ){
-					De de = i2.next();
+					De deCourant = i2.next();
 				
 					//On définit la valeur du dé de façon random entre une valeur de 1 à 6
 					int random = (int)(Math.random() * (6-1)) + 1;
-					
-					ArrayList<Object> faces = de.getListeFaces();
-					de.setValeur(faces.get(random));
+					deCourant.setValeur(random);
 				}
 				
 				//Si tous les dés sont identiques
@@ -60,7 +77,7 @@ public class ConcreteStrategie implements IStrategie{
 					if(score!=0){
 						joueur.ajouterScore(score);
 					}else{
-						tourTermine=false;
+						tourTermine=true;
 					}
 				}
 				
@@ -96,10 +113,10 @@ public class ConcreteStrategie implements IStrategie{
 		int score = 0;
 		
 		for (Iterator<De> i = listeDes.creerIterateur(); i.hasNext(); ){
-			De de = i.next();
+			De deCourant = i.next();
 			
 			//On récupère la valeur du dé
-			int valeur = (Integer) de.getValeur();
+			int valeur = (Integer) deCourant.getValeur();
 			
 			//Si le dé possède la même valeur que le numéro de tour
 			if(valeur==tourCourant){
@@ -117,11 +134,11 @@ public class ConcreteStrategie implements IStrategie{
 	private boolean deIdentique(){
 				
 		for (Iterator<De> i = listeDes.creerIterateur(); i.hasNext(); ){
-			De de = i.next();
+			De de1 = i.next();
 		
 			for (Iterator<De> i2 = listeDes.creerIterateur(); i2.hasNext(); ){
 				De de2 = i2.next();
-				if(de.compareTo(de2)!=0){
+				if(de1.compareTo(de2)!=0){
 					return false;
 				}
 			}			

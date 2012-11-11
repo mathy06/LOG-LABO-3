@@ -6,7 +6,7 @@ import java.util.ArrayList;
 Cours : LOG121
 Session : A2012
 Groupe : 04
-Projet : Laboratoire #1
+Projet : Laboratoire #2
 Étudiant(e)(s) : Philippe Charbonneau
 				 Patrice Robitaille
 				 Mathieu Battah
@@ -18,7 +18,7 @@ Professeur : Ghizlane El boussaidi
 Chargé de labo  : Alvine Boaye Belle
 Nom du fichier : CollectionDe.java
 Date créé : 21-10-2012
-Date dern. modif. : 21-10-2012
+Date dern. modif. : 11-11-2012
 *******************************************************/
 
 public class CollectionDe {
@@ -48,10 +48,10 @@ public class CollectionDe {
 	
 	/**
 	 * Ajoute un dé à la collection
-	 * @param de
+	 * @param nouveauDe
 	 */
-	public void ajouterDe(De de){
-		listeDe.add(de);
+	public void ajouterDe(De nouveauDe){
+		listeDe.add(nouveauDe);
 	}
 	
 	/**
