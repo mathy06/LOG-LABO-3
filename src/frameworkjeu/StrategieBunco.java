@@ -25,7 +25,9 @@ public class StrategieBunco implements IStrategie{
 
 	private CollectionJoueur listeJoueurs;
 	private CollectionDe listeDes;
-	private int tourCourant;
+	private int tourCourant; 
+	private final int POINTBUNCO = 21;
+	private final int POINTDESIDENTIQUE = 5;
 	
 	/**
 	 * Calcule le score d'un tour.
@@ -38,6 +40,7 @@ public class StrategieBunco implements IStrategie{
 		tourCourant = jeu.getTourCourant();
 		listeJoueurs = jeu.getJoueurs();
 		listeDes = jeu.getDes();
+		
 		
 		//On joue le tour pour chaque joueur
 		for (Iterator<Joueur> i = listeJoueurs.creerIterateur(); i.hasNext(); ){
@@ -52,8 +55,8 @@ public class StrategieBunco implements IStrategie{
 				for (Iterator<De> i2 = listeDes.creerIterateur(); i2.hasNext(); ){
 					De deCourant = i2.next();
 				
-					//On définit la valeur du dé de façon random entre une valeur de 1 à 6
-					int random = (int)(Math.random() * (6-1)) + 1;
+					//On définit la valeur du dé de façon random entre une valeur de 1 à nbFace de dé
+					int random = (int)(Math.random() * (listeDes.getTaille()-1)) + 1;
 					deCourant.setValeur(random);
 				}
 				
@@ -64,10 +67,10 @@ public class StrategieBunco implements IStrategie{
 					
 					if(tourCourant==valeurDe){
 						//C'est un BUNCO!
-						joueur.ajouterScore(21);
+						joueur.ajouterScore(POINTBUNCO);
 						tourTermine=true;
 					}else{
-						joueur.ajouterScore(5);
+						joueur.ajouterScore(POINTDESIDENTIQUE);
 						tourTermine=false;
 					}
 					
@@ -133,19 +136,15 @@ public class StrategieBunco implements IStrategie{
 	 */
 	private boolean deIdentique(){
 				
-		for (Iterator<De> i = listeDes.creerIterateur(); i.hasNext(); ){
-			De de1 = i.next();
-		
-			for (Iterator<De> i2 = listeDes.creerIterateur(); i2.hasNext(); ){
-				De de2 = i2.next();
-				if(de1.compareTo(de2)!=0){
-					return false;
-				}
-			}			
+		De de1 = listeDes.getDe(0);
+			
+		for (Iterator<De> i2 = listeDes.creerIterateur(); i2.hasNext(); ){
+			De de2 = i2.next();
+			if(de1.compareTo(de2)!=0){
+				return false;
+			}
 		}
-		
 		return true;
-		
 	}
 	
 }
