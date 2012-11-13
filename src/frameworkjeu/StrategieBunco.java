@@ -87,21 +87,39 @@ public class StrategieBunco implements IStrategie{
 			}
 			
 		}
-		
-		
-		//dans calculer score tour
-		// loop sur collection de joueurs
-			// loop sur collection de de pour setter valeur de chaque de
-			// calculer score avec valeur des de, tour en cour et comparaison entre les de
-			// ajouter le score au joueur en cours
-			// determiner si on change de joueur ou si le joueur courant peut rejouer
 	}
+	
 	/**
 	 * Calcule le vainqueur du jeu.
 	 * @param jeu jeu définissant les joueurs, les dés et le nombre de tours
 	 */
-	public void calculerLeVainqueur(Jeu jeu){
+	public CollectionJoueur calculerLeVainqueur(Jeu jeu){
+
+		listeJoueurs = jeu.getJoueurs();
+		CollectionJoueur joueursGagnants = new CollectionJoueur();
 		
+		Iterator<Joueur> iJoueur = listeJoueurs.creerIterateur();
+		if(iJoueur.hasNext()){
+			Joueur joueurGagnant = iJoueur.next();
+			joueursGagnants.ajouterJoueur(joueurGagnant);
+				
+			while(iJoueur.hasNext()){
+				Joueur joueurAComparer = iJoueur.next();
+				int resultat = joueurGagnant.compareTo(joueurAComparer);
+				//Si joueurAComparer a un score plus élevé.
+				if(resultat == -1){
+					joueurGagnant = joueurAComparer;
+					joueursGagnants = new CollectionJoueur();
+					joueursGagnants.ajouterJoueur(joueurGagnant);
+				}
+				//Si le score de joueurAComparer est égal à celui de joueurGagnant.
+				else if(resultat == 0){
+					joueursGagnants.ajouterJoueur(joueurAComparer);
+				}
+			}
+		}
+				
+		return joueursGagnants;
 	}
 	
 	/**

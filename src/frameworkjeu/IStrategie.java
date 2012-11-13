@@ -29,8 +29,9 @@ public interface IStrategie {
 	
 	/**
 	 * Calcule le vainqueur du jeu.
-	 * @param jeu jeu définissant les joueurs, les dés et le nombre de tours
+	 * @param jeu définissant les joueurs, les dés et le nombre de tours
+	 * @return liste des joueurs gagnants
 	 */
-	public void calculerLeVainqueur(Jeu jeu);
+	public CollectionJoueur calculerLeVainqueur(Jeu jeu);
 
 }
