@@ -85,7 +85,7 @@ public class StrategieBuncoTest {
 		EasyMock.expectLastCall().anyTimes();
 		
 		//Simule les appels de comparaison entre les dés.
-		EasyMock.expect(de1.compareTo(de1)).andReturn(1).times(3);
+		EasyMock.expect(de1.compareTo(de2)).andReturn(1).times(3);
 		
 		//Joueur1 lance 3 fois obtient les valeurs 1, 3 et 3 au tour 1.
 		//Il a fait des points c'est encore à lui de lancer les dés.
@@ -133,7 +133,7 @@ public class StrategieBuncoTest {
 		EasyMock.expectLastCall().anyTimes();
 		
 		//Simule les appels de comparaison entre les dés.
-		EasyMock.expect(de1.compareTo(de1)).andReturn(1).times(2);
+		EasyMock.expect(de1.compareTo(de2)).andReturn(1).times(2);
 		
 		//Joueur1 lance 3 fois obtient les valeurs 1, 3 et 3 au tour 1.
 		//Pas de point, c'est au joueur suivant.
@@ -175,23 +175,14 @@ public class StrategieBuncoTest {
 		EasyMock.expectLastCall().anyTimes();
 		
 		//Simule les appels de comparaison entre les dés.
-		EasyMock.expect(de1.compareTo(de1)).andReturn(0).times(2);
-		EasyMock.expect(de1.compareTo(de2)).andReturn(0).times(2);
-		EasyMock.expect(de1.compareTo(de3)).andReturn(0).times(2);
-		EasyMock.expect(de1.compareTo(de1)).andReturn(1).times(1);
+		EasyMock.expect(de1.compareTo(de2)).andReturn(0);
+		EasyMock.expect(de1.compareTo(de3)).andReturn(0);
+		EasyMock.expect(de1.compareTo(de2)).andReturn(1);
 		
 		//Joueur1 lance 3 fois obtient les valeurs 1, 1 et 1 au tour 1.
 		//c'est un bunco et le joueur passe les dés au joueur suivant
 		EasyMock.expect(de1.getValeur()).andReturn(1);
-		EasyMock.expect(de2.getValeur()).andReturn(1);
-		EasyMock.expect(de3.getValeur()).andReturn(1);
-		
-		//Joueur 2 lance les dés et obtient 5, 5 et 5 au tour 1.
-		//5 points, le joueur rebrasse.
-		EasyMock.expect(de1.getValeur()).andReturn(5);
-		EasyMock.expect(de2.getValeur()).andReturn(5);
-		EasyMock.expect(de3.getValeur()).andReturn(5);
-		
+				
 		//Joueur 2 lance les dés et obtient 2, 5 et 6 au tour 1.
 		//Pas de point, le tour est fini.
 		EasyMock.expect(de1.getValeur()).andReturn(2);
@@ -204,7 +195,7 @@ public class StrategieBuncoTest {
 		EasyMock.replay(de3);
 		
 		// calculer les points de joueur 1 et 2 1: 21 2 :0
-		strategieBunco.calculerScoreTour(jeu); //<-- ICI ca plante, je ne sais pas pourquoi mais les compareTo ne fonctionne pas bien dans mon cas
+		strategieBunco.calculerScoreTour(jeu); 
 		
 		//Vérifie que les dés ont été appelés tel que définis.
 		EasyMock.verify(de1);
@@ -215,6 +206,57 @@ public class StrategieBuncoTest {
 		Assert.assertTrue(joueur1.getScore() == 21);
 		Assert.assertTrue(joueur2.getScore() == 0);
 		
+	}
+	
+	@Test
+	public void calculerScoreTourTripleBrasser(){
+		
+		//Simule les appels à setValeur pour les dés.
+		de1.setValeur(EasyMock.anyInt());
+		EasyMock.expectLastCall().anyTimes();
+		de2.setValeur(EasyMock.anyInt());
+		EasyMock.expectLastCall().anyTimes();
+		de3.setValeur(EasyMock.anyInt());
+		EasyMock.expectLastCall().anyTimes();
+		
+		//Simule les appels de comparaison entre les dés.
+		EasyMock.expect(de1.compareTo(de2)).andReturn(1);
+		EasyMock.expect(de1.compareTo(de2)).andReturn(0);
+		EasyMock.expect(de1.compareTo(de3)).andReturn(0);
+		EasyMock.expect(de1.compareTo(de2)).andReturn(1);
+		
+		//Joueur 1 lance les dés et ne fait aucun point
+		// dés lancé 2,3,4
+		EasyMock.expect(de1.getValeur()).andReturn(2);
+		
+		//Joueur 2 lance les dés et obtient 5, 5 et 5 au tour 1.
+		//5 points, le joueur rebrasse.
+		EasyMock.expect(de1.getValeur()).andReturn(5);
+		EasyMock.expect(de2.getValeur()).andReturn(5);
+		EasyMock.expect(de3.getValeur()).andReturn(5);
+		
+		//Joueur 2 lance et ne fait aucun point
+		//Dés lancé 2,3,4
+		EasyMock.expect(de1.getValeur()).andReturn(2);
+		EasyMock.expect(de2.getValeur()).andReturn(3);
+		EasyMock.expect(de3.getValeur()).andReturn(4);
+		
+		//Rend les dés disponible pour utilisation.
+		EasyMock.replay(de1);
+		EasyMock.replay(de2);
+		EasyMock.replay(de3);
+				
+		// calculer les points de joueur 1 et 2 1: 21 2 :0
+		strategieBunco.calculerScoreTour(jeu); 
+				
+		//Vérifie que les dés ont été appelés tel que définis.
+		EasyMock.verify(de1);
+		EasyMock.verify(de2);
+		EasyMock.verify(de3);
+				
+		//Conditions de réussite.
+		Assert.assertTrue(joueur1.getScore() == 0);
+		Assert.assertTrue(joueur2.getScore() == 5);
 	}
 
 }

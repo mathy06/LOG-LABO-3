@@ -63,7 +63,7 @@ public class StrategieBunco implements IStrategie{
 				//Si tous les dés sont identiques
 				if(deIdentique()){
 					
-					int valeurDe = (Integer) listeDes.getDe(1).getValeur();
+					int valeurDe = (Integer) listeDes.getDe(0).getValeur();
 					
 					if(tourCourant==valeurDe){
 						//C'est un BUNCO!
@@ -135,16 +135,21 @@ public class StrategieBunco implements IStrategie{
 	 * @return boolean
 	 */
 	private boolean deIdentique(){
+		
+		Iterator<De> iDe = listeDes.creerIterateur();
+		boolean estIdentique = true;
+		if(iDe.hasNext()){
+			De de1 = iDe.next();
 				
-		De de1 = listeDes.getDe(0);
-			
-		for (Iterator<De> i2 = listeDes.creerIterateur(); i2.hasNext(); ){
-			De de2 = i2.next();
-			if(de1.compareTo(de2)!=0){
-				return false;
+			while(iDe.hasNext()){
+				De de2 = iDe.next();
+				if(de1.compareTo(de2)!=0){
+					estIdentique = false;
+					break;
+				}
 			}
 		}
-		return true;
+		return estIdentique;
 	}
 	
 }
