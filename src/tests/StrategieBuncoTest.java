@@ -165,7 +165,7 @@ public class StrategieBuncoTest {
 	}
 	
 	@Test
-	public void calculerScoreTourBuncoBrasser(){
+	public void calculerScoreTourBuncoTest(){
 		//Simule les appels à setValeur pour les dés.
 		de1.setValeur(EasyMock.anyInt());
 		EasyMock.expectLastCall().anyTimes();
@@ -209,7 +209,7 @@ public class StrategieBuncoTest {
 	}
 	
 	@Test
-	public void calculerScoreTourTripleBrasser(){
+	public void calculerScoreTourTripleTest(){
 		
 		//Simule les appels à setValeur pour les dés.
 		de1.setValeur(EasyMock.anyInt());
