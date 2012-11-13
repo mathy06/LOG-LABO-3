@@ -258,5 +258,57 @@ public class StrategieBuncoTest {
 		Assert.assertTrue(joueur1.getScore() == 0);
 		Assert.assertTrue(joueur2.getScore() == 5);
 	}
+	
+	@Test
+	public void calculerLeVainqueurUniqueTest(){
+		
+		//Simule les scores des joueurs
+		joueur1.ajouterScore(EasyMock.anyInt());
+		EasyMock.expectLastCall().anyTimes();
+		joueur2.ajouterScore(EasyMock.anyInt());
+		EasyMock.expectLastCall().anyTimes();
+		
+		//Simule les appels de comparaison entre les joueurs
+		EasyMock.expect(joueur1.compareTo(joueur2)).andReturn(1);
+		
+		//calculer les points de joueur 1 et 2
+		CollectionJoueur listejoueursGagnant = strategieBunco.calculerLeVainqueur(jeu); 
+		
+		//Vérifie que les joueurs ont été appelés tel que définis.
+		EasyMock.verify(joueur1);
+		EasyMock.verify(joueur2);
+		
+		//Conditions de réussite.
+		Assert.assertTrue(listejoueursGagnant.getTaille() == 1);
+		Assert.assertTrue(listejoueursGagnant.getJoueur(0) == joueur1);
+		
+	}
+	
+	@Test
+	public void calculerLeVainqueurDoubleTest(){
+		
+		//Simule les scores des joueurs
+		joueur1.ajouterScore(EasyMock.anyInt());
+		EasyMock.expectLastCall().anyTimes();
+		joueur2.ajouterScore(EasyMock.anyInt());
+		EasyMock.expectLastCall().anyTimes();
+		
+		//Simule les appels de comparaison entre les joueurs
+		EasyMock.expect(joueur1.compareTo(joueur2)).andReturn(0);
+		
+		//calculer les points de joueur 1 et 2
+		CollectionJoueur listejoueursGagnant = strategieBunco.calculerLeVainqueur(jeu); 
+		
+		//Vérifie que les joueurs ont été appelés tel que définis.
+		EasyMock.verify(joueur1);
+		EasyMock.verify(joueur2);
+		
+		//Conditions de réussite.
+		Assert.assertTrue(listejoueursGagnant.getTaille() == 2);
+		/*Assert.assertTrue(listejoueursGagnant.contains(joueur1));
+		Assert.assertTrue(listejoueursGagnant.contains(joueur2));*/
+		
+		
+	}
 
 }
