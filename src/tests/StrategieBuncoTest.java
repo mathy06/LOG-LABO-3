@@ -315,14 +315,14 @@ public class StrategieBuncoTest {
 		EasyMock.replay(joueur1);
 		
 		//calculer les points de joueur 1 et 2
-		CollectionJoueur listejoueursGagnant = strategieBunco.calculerLeVainqueur(jeu); 
+		CollectionJoueur listejGagnant = strategieBunco.calculerLeVainqueur(jeu); 
 		
 		//Vérifie que les joueurs ont été appelés tel que définis.
 		EasyMock.verify(joueur1);
 		
 		//Conditions de réussite.
-		Assert.assertTrue(listejoueursGagnant.getTaille() == 1);
-		Assert.assertTrue(listejoueursGagnant.getJoueur(0) == joueur1);
+		Assert.assertTrue(listejGagnant.getTaille() == 1);
+		Assert.assertTrue(listejGagnant.getJoueur(0) == joueur1);
 		
 	}
 	
@@ -338,13 +338,13 @@ public class StrategieBuncoTest {
 		EasyMock.replay(joueur1);
 		
 		//calculer les points de joueur 1 et 2
-		CollectionJoueur listejoueursGagnant = strategieBunco.calculerLeVainqueur(jeu); 
+		CollectionJoueur listejGagnant = strategieBunco.calculerLeVainqueur(jeu); 
 		
 		//Vérifie que les joueurs ont été appelés tel que définis.
 		EasyMock.verify(joueur1);
 		
 		//Conditions de réussite.
-		Assert.assertTrue(listejoueursGagnant.getTaille() == 2);
+		Assert.assertTrue(listejGagnant.getTaille() == 2);
 		
 		
 	}

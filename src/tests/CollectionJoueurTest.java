@@ -20,7 +20,7 @@ public class CollectionJoueurTest {
 	}
 	
 	@Test
-	public void CollectionJoueurConstructTest(){
+	public void collectionJoueurConstructTest(){
 		collecJoueur = new CollectionJoueur();
 		Assert.assertTrue(collecJoueur.getTaille() == 0);
 	}

@@ -39,7 +39,7 @@ public class CollectionDeTest {
 	}
 	
 	@Test
-	public void CollectionDeConstructTest(){
+	public void collectionDeConstructTest(){
 		collecDe = new CollectionDe();
 		Assert.assertTrue(collecDe.getTaille() == 0);
 	}
