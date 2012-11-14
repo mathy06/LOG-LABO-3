@@ -35,9 +35,10 @@ public class JeuPartieBunco extends frameworkjeu.AbstractJeuPartie {
 	private CollectionJoueur listeJoueurs;
 	private CollectionDe listeDes;
 	private StrategieBunco strategie;
+	private final int NBTOUR = 6;
 	
-	public int setNbTours(){
-		return 3;
+	public int getNbTours(){
+		return NBTOUR;
 	}
 	
 	public CollectionJoueur creerListeJoueurs(){
