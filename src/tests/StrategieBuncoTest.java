@@ -42,8 +42,8 @@ public class StrategieBuncoTest {
 	private De de2;
 	private De de3;
 	
-	@Before
-	public void faireAvant(){
+	
+	public void faireAvantDe(){
 		//Mock la classe De pour contrôler la valeur des dés.
 		de1 = EasyMock.createMock(De.class);
 		de2 = EasyMock.createMock(De.class);
@@ -73,9 +73,42 @@ public class StrategieBuncoTest {
 		jeu = new Jeu(1, listejoueurs, listeDes, strategieBunco);
 	}
 	
+	public void faireAvantJoueur(){
+
+		//Création de 2 joueurs
+		CollectionJoueur listejoueurs = new CollectionJoueur();
+		
+		//Mock la classe Joueur
+		joueur1 = EasyMock.createMock(Joueur.class);
+		joueur2 = EasyMock.createMock(Joueur.class);
+		
+		listejoueurs.ajouterJoueur(joueur1);
+		listejoueurs.ajouterJoueur(joueur2);
+		
+		//Création de la liste des faces des dés
+		ArrayList<Object> listeFaces = new ArrayList<Object>();
+		Collections.addAll(listeFaces, 1,2,3,4,5,6);
+		
+		//Création de 3 dés pour le jeu Bunco+
+		CollectionDe listeDes = new CollectionDe();
+		listeDes.ajouterDe(new De(listeFaces));
+		listeDes.ajouterDe(new De(listeFaces));
+		listeDes.ajouterDe(new De(listeFaces));
+		
+		//Création de la strategie Bunco+
+		strategieBunco = new StrategieBunco();
+		
+		//Création du jeu Bunco+ avec 1 tour pour faciliter les tests.
+		jeu = new Jeu(1, listejoueurs, listeDes, strategieBunco);
+	}
+	
 
 	@Test
-	public void calculerScoreTourUnDeEgalTourTest() {		
+	public void calculerScoreTourUnDeEgalTourTest() {	
+		
+		//Before
+		faireAvantDe();
+		
 		//Simule les appels à setValeur pour les dés.
 		de1.setValeur(EasyMock.anyInt());
 		EasyMock.expectLastCall().anyTimes();
@@ -123,7 +156,11 @@ public class StrategieBuncoTest {
 	}
 	
 	@Test
-	public void calculerScoreTourAucunPointTest() {		
+	public void calculerScoreTourAucunPointTest() {	
+		
+		//Before
+		faireAvantDe();
+		
 		//Simule les appels à setValeur pour les dés.
 		de1.setValeur(EasyMock.anyInt());
 		EasyMock.expectLastCall().anyTimes();
@@ -166,6 +203,10 @@ public class StrategieBuncoTest {
 	
 	@Test
 	public void calculerScoreTourBuncoTest(){
+		
+		//Before
+		faireAvantDe();
+		
 		//Simule les appels à setValeur pour les dés.
 		de1.setValeur(EasyMock.anyInt());
 		EasyMock.expectLastCall().anyTimes();
@@ -210,6 +251,9 @@ public class StrategieBuncoTest {
 	
 	@Test
 	public void calculerScoreTourTripleTest(){
+		
+		//Before
+		faireAvantDe();
 		
 		//Simule les appels à setValeur pour les dés.
 		de1.setValeur(EasyMock.anyInt());
@@ -262,21 +306,19 @@ public class StrategieBuncoTest {
 	@Test
 	public void calculerLeVainqueurUniqueTest(){
 		
-		//Simule les scores des joueurs
-		joueur1.ajouterScore(EasyMock.anyInt());
-		EasyMock.expectLastCall().anyTimes();
-		joueur2.ajouterScore(EasyMock.anyInt());
-		EasyMock.expectLastCall().anyTimes();
-		
+		//Before
+		faireAvantJoueur();
+				
 		//Simule les appels de comparaison entre les joueurs
 		EasyMock.expect(joueur1.compareTo(joueur2)).andReturn(1);
+		
+		EasyMock.replay(joueur1);
 		
 		//calculer les points de joueur 1 et 2
 		CollectionJoueur listejoueursGagnant = strategieBunco.calculerLeVainqueur(jeu); 
 		
 		//Vérifie que les joueurs ont été appelés tel que définis.
 		EasyMock.verify(joueur1);
-		EasyMock.verify(joueur2);
 		
 		//Conditions de réussite.
 		Assert.assertTrue(listejoueursGagnant.getTaille() == 1);
@@ -287,26 +329,22 @@ public class StrategieBuncoTest {
 	@Test
 	public void calculerLeVainqueurDoubleTest(){
 		
-		//Simule les scores des joueurs
-		joueur1.ajouterScore(EasyMock.anyInt());
-		EasyMock.expectLastCall().anyTimes();
-		joueur2.ajouterScore(EasyMock.anyInt());
-		EasyMock.expectLastCall().anyTimes();
-		
+		//Before
+		faireAvantJoueur();
+			
 		//Simule les appels de comparaison entre les joueurs
 		EasyMock.expect(joueur1.compareTo(joueur2)).andReturn(0);
+		
+		EasyMock.replay(joueur1);
 		
 		//calculer les points de joueur 1 et 2
 		CollectionJoueur listejoueursGagnant = strategieBunco.calculerLeVainqueur(jeu); 
 		
 		//Vérifie que les joueurs ont été appelés tel que définis.
 		EasyMock.verify(joueur1);
-		EasyMock.verify(joueur2);
 		
 		//Conditions de réussite.
 		Assert.assertTrue(listejoueursGagnant.getTaille() == 2);
-		/*Assert.assertTrue(listejoueursGagnant.contains(joueur1));
-		Assert.assertTrue(listejoueursGagnant.contains(joueur2));*/
 		
 		
 	}
