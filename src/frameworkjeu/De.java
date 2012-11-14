@@ -29,7 +29,10 @@ public class De implements Comparable<De> {
 	/**
 	 * Constructeur du dé.
 	 * @param nombreFaces		Nombre de faces du dé
-	 * @param facesDefinition	Collection contenant la valeur de chaque face du dé
+	 * @param facesDefinition	Collection contenant la valeur de chaque face du dé. 
+	 * Doit etre pre-trier en ordre croissant pour assurer le bon fonctionnement des 
+	 * calculs de score. Si la liste n'est pas trie, elle sera considere comme tel.
+	 * 
 	 */
 	public De(ArrayList<Object> listeFaces){
 		faces = listeFaces;
