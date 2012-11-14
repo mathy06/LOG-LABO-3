@@ -71,7 +71,6 @@ public class StrategieBunco implements IStrategie{
 						tourTermine=true;
 					}else{
 						joueur.ajouterScore(POINTDESIDENTIQUE);
-						tourTermine=false;
 					}
 					
 				}else{
