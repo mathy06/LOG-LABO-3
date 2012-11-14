@@ -38,6 +38,10 @@ public class De implements Comparable<De> {
 		faces = listeFaces;
 	}
 	
+	/**
+	 * Retourne la liste des faces du dés.
+	 * @return liste des faces
+	 */
 	public ArrayList<Object> getListeFaces(){
 		return faces;
 	}

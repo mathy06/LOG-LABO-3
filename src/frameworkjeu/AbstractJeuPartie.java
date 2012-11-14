@@ -23,6 +23,9 @@ public abstract class AbstractJeuPartie {
 	
 	private Jeu jeu;
 	
+	/**
+	 * Initialise une instance de jeu.
+	 */
 	final void initialiserJeu(){
 		int tours = getNbTours();
 		CollectionJoueur listeJoueurs = creerListeJoueurs();
@@ -32,14 +35,33 @@ public abstract class AbstractJeuPartie {
 		jeu = new Jeu(tours, listeJoueurs, listeDes, strategie);
 	}
 	
+	/**
+	 * Retourne le nombre de tours du jeu.
+	 * @return nombre de tours
+	 */
 	public abstract int getNbTours();
 	
+	/**
+	 * Crée une liste de joueurs.
+	 * @return liste de joueurs
+	 */
 	public abstract CollectionJoueur creerListeJoueurs();
 	
+	/**
+	 * Crée une liste de dés.
+	 * @return liste de dés
+	 */
 	public abstract CollectionDe creerListeDes();
 	
+	/**
+	 * Crée la stratégie du jeu.
+	 * @return stratégie du jeu
+	 */
 	public abstract IStrategie creerStrategie();
 	
+	/**
+	 * Lance une partie d'un jeu.
+	 */
 	final void jouerPartie(){
 		for(int i=1; i<=jeu.getNbTours(); i++){
 			jeu.setTourCourant(i);

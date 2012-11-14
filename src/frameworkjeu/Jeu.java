@@ -41,22 +41,42 @@ public class Jeu {
 		strategie = jeuStrategie;
 	}
 	
+	/**
+	 * Définie la valeur du tour courant.
+	 * @param tour
+	 */
 	public void setTourCourant(int tour){
 		tourCourant = tour;
 	}
 	
+	/**
+	 * Retourne la liste des joueurs du jeu.
+	 * @return liste de joueurs
+	 */
 	public CollectionJoueur getJoueurs(){
 		return listeJoueurs;
 	}
 	
+	/**
+	 * Retourne la liste des dés du jeu.
+	 * @return liste de dés
+	 */
 	public CollectionDe getDes(){
 		return listeDes;
 	}
 	
+	/**
+	 * Retourne le tour courant.
+	 * @return tour courant
+	 */
 	public int getTourCourant(){
 		return tourCourant;
 	}
 	
+	/**
+	 * Retourne le nombre de tours totals.
+	 * @return nombre de tours
+	 */
 	public int getNbTours(){
 		return nbTours;
 	}
@@ -70,9 +90,9 @@ public class Jeu {
 	
 	/**
 	 * Retourne le joueur ayant gagné le jeu.
-	 * @return Joueur gagant
+	 * @return Joueur gagnant
 	 */
-	public void calculerLeVainqueur(){
-		strategie.calculerLeVainqueur(this);
+	public CollectionJoueur calculerLeVainqueur(){
+		return strategie.calculerLeVainqueur(this);
 	}
 }
