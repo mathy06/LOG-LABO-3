@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-  <testsuite errors="0" failures="0" hostname="logti-a3324-29" id="0" name="CollectionDeTest" package="tests" tests="3" time="0.413" timestamp="2012-11-14T02:16:00">
+  <testsuite errors="0" failures="0" hostname="logti-a3324-29" id="0" name="CollectionDeTest" package="tests" tests="3" time="0.45" timestamp="2012-11-14T02:58:20">
       <properties>
           <property name="java.vendor" value="Sun Microsystems Inc." />
 
@@ -194,7 +194,7 @@
 
           <property name="ant.version" value="Apache Ant(TM) version 1.8.2 compiled on December 20 2010" />
 
-          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner tests.CollectionDeTest filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,J:\Workspace\LOG-LABO-3\junit\TEST-tests.CollectionDeTest.xml crashfile=J:\Workspace\LOG-LABO-3\junitvmwatcher4172373963390977570.properties propsfile=J:\Workspace\LOG-LABO-3\junit4431749549075237412.properties" />
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner tests.CollectionDeTest filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,J:\Workspace\LOG-LABO-3\junit\TEST-tests.CollectionDeTest.xml crashfile=J:\Workspace\LOG-LABO-3\junitvmwatcher5801414864509895281.properties propsfile=J:\Workspace\LOG-LABO-3\junit7196907852967060512.properties" />
 
           <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
 
@@ -286,9 +286,9 @@
 
       </properties>
 
-      <testcase classname="tests.CollectionDeTest" name="CollectionDeConstructTest" time="0.299" />
+      <testcase classname="tests.CollectionDeTest" name="collectionDeConstructTest" time="0.288" />
 
-      <testcase classname="tests.CollectionDeTest" name="ajouterDeTest" time="0.0010" />
+      <testcase classname="tests.CollectionDeTest" name="ajouterDeTest" time="0.0" />
 
       <testcase classname="tests.CollectionDeTest" name="getDeTest" time="0.0" />
 
@@ -297,7 +297,7 @@
       <system-err><![CDATA[]]></system-err>
 
   </testsuite>
-  <testsuite errors="0" failures="0" hostname="logti-a3324-29" id="1" name="CollectionJoueurTest" package="tests" tests="3" time="0.454" timestamp="2012-11-14T02:16:02">
+  <testsuite errors="0" failures="0" hostname="logti-a3324-29" id="1" name="CollectionJoueurTest" package="tests" tests="3" time="0.461" timestamp="2012-11-14T02:58:22">
       <properties>
           <property name="java.vendor" value="Sun Microsystems Inc." />
 
@@ -491,7 +491,7 @@
 
           <property name="ant.version" value="Apache Ant(TM) version 1.8.2 compiled on December 20 2010" />
 
-          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner tests.CollectionJoueurTest filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,J:\Workspace\LOG-LABO-3\junit\TEST-tests.CollectionJoueurTest.xml crashfile=J:\Workspace\LOG-LABO-3\junitvmwatcher19828914632234100.properties propsfile=J:\Workspace\LOG-LABO-3\junit4274369627110579149.properties" />
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner tests.CollectionJoueurTest filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,J:\Workspace\LOG-LABO-3\junit\TEST-tests.CollectionJoueurTest.xml crashfile=J:\Workspace\LOG-LABO-3\junitvmwatcher5118847455407359378.properties propsfile=J:\Workspace\LOG-LABO-3\junit3693722482076650140.properties" />
 
           <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
 
@@ -583,18 +583,18 @@
 
       </properties>
 
-      <testcase classname="tests.CollectionJoueurTest" name="CollectionJoueurConstructTest" time="0.31" />
+      <testcase classname="tests.CollectionJoueurTest" name="collectionJoueurConstructTest" time="0.296" />
 
-      <testcase classname="tests.CollectionJoueurTest" name="ajouterJoueurTest" time="0.0" />
+      <testcase classname="tests.CollectionJoueurTest" name="ajouterJoueurTest" time="0.0010" />
 
-      <testcase classname="tests.CollectionJoueurTest" name="getJoueurTest" time="0.0" />
+      <testcase classname="tests.CollectionJoueurTest" name="getJoueurTest" time="0.0010" />
 
       <system-out><![CDATA[]]></system-out>
 
       <system-err><![CDATA[]]></system-err>
 
   </testsuite>
-  <testsuite errors="0" failures="0" hostname="logti-a3324-29" id="2" name="DeTest" package="tests" tests="4" time="0.129" timestamp="2012-11-14T02:15:54">
+  <testsuite errors="0" failures="0" hostname="logti-a3324-29" id="2" name="DeTest" package="tests" tests="4" time="0.115" timestamp="2012-11-14T02:58:13">
       <properties>
           <property name="java.vendor" value="Sun Microsystems Inc." />
 
@@ -788,7 +788,7 @@
 
           <property name="ant.version" value="Apache Ant(TM) version 1.8.2 compiled on December 20 2010" />
 
-          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner tests.DeTest filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,J:\Workspace\LOG-LABO-3\junit\TEST-tests.DeTest.xml crashfile=J:\Workspace\LOG-LABO-3\junitvmwatcher7301232872372209515.properties propsfile=J:\Workspace\LOG-LABO-3\junit4699778940111588702.properties" />
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner tests.DeTest filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,J:\Workspace\LOG-LABO-3\junit\TEST-tests.DeTest.xml crashfile=J:\Workspace\LOG-LABO-3\junitvmwatcher1664823284559402267.properties propsfile=J:\Workspace\LOG-LABO-3\junit895964523902954351.properties" />
 
           <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
 
@@ -880,11 +880,11 @@
 
       </properties>
 
-      <testcase classname="tests.DeTest" name="deInferieurTest" time="0.016" />
+      <testcase classname="tests.DeTest" name="deInferieurTest" time="0.0050" />
 
       <testcase classname="tests.DeTest" name="deSuperieurTest" time="0.0" />
 
-      <testcase classname="tests.DeTest" name="memeDeTest" time="0.0010" />
+      <testcase classname="tests.DeTest" name="memeDeTest" time="0.0" />
 
       <testcase classname="tests.DeTest" name="deNullTest" time="0.0" />
 
@@ -893,7 +893,7 @@
       <system-err><![CDATA[]]></system-err>
 
   </testsuite>
-  <testsuite errors="0" failures="0" hostname="logti-a3324-29" id="3" name="JoueurTest" package="tests" tests="5" time="0.116" timestamp="2012-11-14T02:15:56">
+  <testsuite errors="0" failures="0" hostname="logti-a3324-29" id="3" name="JoueurTest" package="tests" tests="5" time="0.165" timestamp="2012-11-14T02:58:15">
       <properties>
           <property name="java.vendor" value="Sun Microsystems Inc." />
 
@@ -1087,7 +1087,7 @@
 
           <property name="ant.version" value="Apache Ant(TM) version 1.8.2 compiled on December 20 2010" />
 
-          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner tests.JoueurTest filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,J:\Workspace\LOG-LABO-3\junit\TEST-tests.JoueurTest.xml crashfile=J:\Workspace\LOG-LABO-3\junitvmwatcher2053148488717412910.properties propsfile=J:\Workspace\LOG-LABO-3\junit3103797013433387526.properties" />
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner tests.JoueurTest filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,J:\Workspace\LOG-LABO-3\junit\TEST-tests.JoueurTest.xml crashfile=J:\Workspace\LOG-LABO-3\junitvmwatcher7827921705435889455.properties propsfile=J:\Workspace\LOG-LABO-3\junit2286894950647741007.properties" />
 
           <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
 
@@ -1179,7 +1179,7 @@
 
       </properties>
 
-      <testcase classname="tests.JoueurTest" name="joueurAjouterScoreTest" time="0.0050" />
+      <testcase classname="tests.JoueurTest" name="joueurAjouterScoreTest" time="0.0070" />
 
       <testcase classname="tests.JoueurTest" name="joueurSuperieurTest" time="0.0" />
 
@@ -1194,7 +1194,7 @@
       <system-err><![CDATA[]]></system-err>
 
   </testsuite>
-  <testsuite errors="0" failures="0" hostname="logti-a3324-29" id="4" name="StrategieBuncoTest" package="tests" tests="6" time="0.784" timestamp="2012-11-14T02:15:58">
+  <testsuite errors="0" failures="0" hostname="logti-a3324-29" id="4" name="StrategieBuncoTest" package="tests" tests="6" time="1.892" timestamp="2012-11-14T02:58:17">
       <properties>
           <property name="java.vendor" value="Sun Microsystems Inc." />
 
@@ -1388,7 +1388,7 @@
 
           <property name="ant.version" value="Apache Ant(TM) version 1.8.2 compiled on December 20 2010" />
 
-          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner tests.StrategieBuncoTest filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,J:\Workspace\LOG-LABO-3\junit\TEST-tests.StrategieBuncoTest.xml crashfile=J:\Workspace\LOG-LABO-3\junitvmwatcher168149813813938465.properties propsfile=J:\Workspace\LOG-LABO-3\junit8273495815734262080.properties" />
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner tests.StrategieBuncoTest filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,J:\Workspace\LOG-LABO-3\junit\TEST-tests.StrategieBuncoTest.xml crashfile=J:\Workspace\LOG-LABO-3\junitvmwatcher8839711333522931910.properties propsfile=J:\Workspace\LOG-LABO-3\junit1698813690383751915.properties" />
 
           <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
 
@@ -1480,9 +1480,9 @@
 
       </properties>
 
-      <testcase classname="tests.StrategieBuncoTest" name="calculerScoreTourUnDeEgalTourTest" time="0.585" />
+      <testcase classname="tests.StrategieBuncoTest" name="calculerScoreTourUnDeEgalTourTest" time="1.504" />
 
-      <testcase classname="tests.StrategieBuncoTest" name="calculerScoreTourAucunPointTest" time="0.0020" />
+      <testcase classname="tests.StrategieBuncoTest" name="calculerScoreTourAucunPointTest" time="0.0030" />
 
       <testcase classname="tests.StrategieBuncoTest" name="calculerScoreTourBuncoTest" time="0.0040" />
 

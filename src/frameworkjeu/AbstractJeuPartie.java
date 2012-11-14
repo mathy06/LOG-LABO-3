@@ -22,6 +22,7 @@ Date dern. modif. : 11-11-2012
 public abstract class AbstractJeuPartie {
 	
 	private Jeu jeu;
+	private CollectionJoueur listeGagnants = new CollectionJoueur();
 	
 	/**
 	 * Initialise une instance de jeu.
@@ -68,7 +69,15 @@ public abstract class AbstractJeuPartie {
 			jeu.calculerScoreTour();
 		}
 		
-		jeu.calculerLeVainqueur();
+		listeGagnants = jeu.calculerLeVainqueur();
+	}
+	
+	/**
+	 * Retourne la liste du/des gagnant(e)(s)
+	 * @return liste de(s) gagnant(s)
+	 */
+	final CollectionJoueur getGagnant(){
+		return listeGagnants;
 	}
 	
 }
