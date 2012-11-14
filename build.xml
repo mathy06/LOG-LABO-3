@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="LOG-LABO-3">
+    <property environment="env"/>
+    <property name="junit.output.dir" value="junit"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.6"/>
+    <property name="source" value="1.6"/>
+    <path id="LOG-LABO-3.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="library/cglib-nodep-2.2.2.jar"/>
+        <pathelement location="library/easymock-3.1.jar"/>
+        <pathelement location="library/objenesis-1.2.jar"/>
+        <pathelement location="library/junit.jar"/>
+        <pathelement location="library/org.hamcrest.core_1.1.0.v20090501071000.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src" excludes="**/*.launch, **/*.java"/>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="LOG-LABO-3.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target name="DeTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="tests.DeTest" todir="${junit.output.dir}"/>
+            <classpath refid="LOG-LABO-3.classpath"/>
+        </junit>
+    </target>
+    <target name="JoueurTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="tests.JoueurTest" todir="${junit.output.dir}"/>
+            <classpath refid="LOG-LABO-3.classpath"/>
+        </junit>
+    </target>
+    <target name="StrategieBuncoTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="tests.StrategieBuncoTest" todir="${junit.output.dir}"/>
+            <classpath refid="LOG-LABO-3.classpath"/>
+        </junit>
+    </target>
+    <target name="CollectionDeTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="tests.CollectionDeTest" todir="${junit.output.dir}"/>
+            <classpath refid="LOG-LABO-3.classpath"/>
+        </junit>
+    </target>
+    <target name="CollectionJoueurTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="tests.CollectionJoueurTest" todir="${junit.output.dir}"/>
+            <classpath refid="LOG-LABO-3.classpath"/>
+        </junit>
+    </target>
+    <target name="junitreport">
+        <junitreport todir="${junit.output.dir}">
+            <fileset dir="${junit.output.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${junit.output.dir}"/>
+        </junitreport>
+    </target>
+    <target depends="DeTest,JoueurTest,StrategieBuncoTest,CollectionDeTest,CollectionJoueurTest,junitreport" name="TestAll"/>
+</project>
