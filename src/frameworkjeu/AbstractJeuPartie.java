@@ -27,7 +27,7 @@ public abstract class AbstractJeuPartie {
 	/**
 	 * Initialise une instance de jeu.
 	 */
-	final void initialiserJeu(){
+	public final void initialiserJeu(){
 		int tours = getNbTours();
 		CollectionJoueur listeJoueurs = creerListeJoueurs();
 		CollectionDe listeDes = creerListeDes();
@@ -63,7 +63,7 @@ public abstract class AbstractJeuPartie {
 	/**
 	 * Lance une partie d'un jeu.
 	 */
-	final void jouerPartie(){
+	public final void jouerPartie(){
 		for(int i=1; i<=jeu.getNbTours(); i++){
 			jeu.setTourCourant(i);
 			jeu.calculerScoreTour();
@@ -76,7 +76,7 @@ public abstract class AbstractJeuPartie {
 	 * Retourne la liste du/des gagnant(e)(s)
 	 * @return liste de(s) gagnant(s)
 	 */
-	final CollectionJoueur getGagnant(){
+	public final CollectionJoueur getGagnant(){
 		return listeGagnants;
 	}
 	
